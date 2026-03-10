@@ -15,8 +15,8 @@
 
     <script>
       const nome = prompt("Digite seu nome:");
-
-      const socket = new WebSocket("ws://172.20.10.11:8080");
+      // usar - ws://IP:porta
+      const socket = new WebSocket("");
 
       const messagesDiv = document.getElementById("messages");
       const input = document.getElementById("input");
