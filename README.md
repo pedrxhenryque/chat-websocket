@@ -11,7 +11,7 @@ npm
 🚀 Como executar o projeto
 
 1. Clonar o repositório
-   git clone https://github.com/SEU_USUARIO/chat-websocket.git
+   git clone https://github.com/pedrxhenryque/chat-websocket.git
    cd chat-websocket
 2. Instalar dependências
    npm install
