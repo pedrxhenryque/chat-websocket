@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chat WebSocket</title>
+  </head>
+
+  <body>
+    <h2>Chat Simples</h2>
+
+    <div id="messages"></div>
+
+    <input type="text" id="input" placeholder="Digite uma mensagem..." />
+    <button onclick="sendMessage()">Enviar</button>
+
+    <script>
+      const nome = prompt("Digite seu nome:");
+
+      const socket = new WebSocket("ws://172.20.10.11:8080");
+
+      const messagesDiv = document.getElementById("messages");
+      const input = document.getElementById("input");
+
+      socket.onmessage = function (event) {
+        const p = document.createElement("p");
+        p.textContent = event.data;
+        messagesDiv.appendChild(p);
+      };
+
+      function sendMessage() {
+        if (input.value !== "") {
+          const mensagem = nome + ": " + input.value;
+          socket.send(mensagem);
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
